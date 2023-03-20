@@ -40,9 +40,14 @@ const questions = [
     }
 ];
 
+/** 
+ * Runs CLI prompts and returns its responses as a Promise
+ * @returns { Promise<{ project: string, linter: string, prettier: boolean }> }
+ */
+async function run() {
+    return await prompts(questions);
+}
+
 export default {
-    /** @returns { Promise<{ project: string, linter: string, prettier: boolean }> } */
-    async run() {
-        return await prompts(questions);
-    }
+    run
 };

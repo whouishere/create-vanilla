@@ -3,4 +3,4 @@ export default {
     eslint: '^8.36.0', 
     rome: '^11.0.0', 
     prettier: '2.8.5'
-}
+};

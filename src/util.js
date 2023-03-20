@@ -24,5 +24,4 @@ export function writeToJson(object, path) {
     writeToFile(JSON.stringify(object, null, 2), path);
 }
 
-// TODO: separate this module into its own folder
 // TODO: create a panic function
