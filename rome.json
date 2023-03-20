@@ -1,0 +1,19 @@
+{
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true, 
+      "style": {
+        "useBlockStatements": "error", 
+        "useShorthandArrayType": "error"
+      }
+    }
+  }, 
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single", 
+      "semicolons": "always", 
+      "trailingComma": "none"
+    }
+  }
+}

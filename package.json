@@ -1,0 +1,37 @@
+{
+  "name": "create-vanilla",
+  "version": "0.0.1",
+  "description": "Quickly setup vanilla JavaScript frontends",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node src/index.js",
+    "lint": "yarn run rome ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whouishere/create-vanilla.git"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "rome": "^11.0.0"
+  },
+  "keywords": [
+    "vanilla",
+    "javascript",
+    "html",
+    "static",
+    "frontend",
+    "scaffolding",
+    "setup",
+    "create"
+  ],
+  "author": "Willian Vinagre",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/whouishere/create-vanilla/issues"
+  },
+  "homepage": "https://github.com/whouishere/create-vanilla#readme"
+}
