@@ -2,6 +2,8 @@
   "name": "create-vanilla",
   "version": "0.0.1",
   "description": "Quickly setup vanilla JavaScript frontends",
+  "author": "Willian Vinagre",
+  "license": "MIT",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -28,8 +30,6 @@
     "setup",
     "create"
   ],
-  "author": "Willian Vinagre",
-  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/whouishere/create-vanilla/issues"
   },
