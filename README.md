@@ -13,4 +13,8 @@ Using `create-vanilla` you'll have quick and easy access to
 All of this while having zero dependencies and zero build process!
 
 ## Usage
-###### TODO
+```
+npx create-vanilla
+```
+
+And you should be able to create a new Vanilla JS project!
