@@ -115,8 +115,11 @@ function create(responses) {
         default:
             break;
     }
-}
 
+    // copy the template to the project
+    util.cpRecursive(`${util.getRootPath()}/template`, responses.project);
+}
+            
 export default {
     create
 };
