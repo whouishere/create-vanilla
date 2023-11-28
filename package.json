@@ -1,6 +1,6 @@
 {
   "name": "create-vanilla",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Quickly setup vanilla JavaScript frontends",
   "author": "Willian Vinagre",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "lint": "yarn run biome ci ."
   },
   "files": [
-    "src", 
+    "src",
     "template"
   ],
   "repository": {
