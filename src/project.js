@@ -14,7 +14,7 @@ const eslintrc = {
     }
 };
 
-const romerc = {
+const biomerc = {
     linter: {
         enabled: true, 
         rules: {
@@ -58,8 +58,8 @@ const getDevDependencies = (responses) => {
             }
             break;
         
-        case 'rome':
-            dev['rome'] = dependencies.rome;
+        case 'biome':
+            dev['biome'] = dependencies.biome;
             break;
         
         default:
@@ -108,8 +108,8 @@ function create(responses) {
             }
             break;
         
-        case 'rome':
-            util.writeToJson(romerc, `${responses.project}/rome.json`);
+        case 'biome':
+            util.writeToJson(biomerc, `${responses.project}/biome.json`);
             break;
     
         default:

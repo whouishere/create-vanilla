@@ -26,7 +26,7 @@ const questions = [
         choices: [
             { title: 'No', value: 'no' }, 
             { title: 'ESLint', value: 'eslint' }, 
-            { title: 'Rome', value: 'rome' }
+            { title: 'Biome', value: 'biome' }
         ], 
         initial: 0
     }, 

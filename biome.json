@@ -1,4 +1,8 @@
 {
+  "$schema": "https://biomejs.dev/schemas/1.4.0/schema.json", 
+  "organizeImports": {
+    "enabled": true
+  }, 
   "linter": {
     "enabled": true,
     "rules": {
@@ -11,6 +15,8 @@
   }, 
   "javascript": {
     "formatter": {
+      "indentStyle": "space", 
+      "indentWidth": 4, 
       "quoteStyle": "single", 
       "semicolons": "always", 
       "trailingComma": "none"
