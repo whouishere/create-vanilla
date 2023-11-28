@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { exit } from 'process';
 import { fileURLToPath, pathToFileURL } from 'url';
+import { exit } from 'process';
 
 /**
  * Writes a data string to a file
@@ -47,14 +47,14 @@ export function getRootPath() {
 export function cpRecursive(source, target) {
     const files = fs.readdirSync(source, null);
 
-    files.forEach((file) => {
+    for (const file of files) {
         fs.cp(`${source}/${file}`, `${target}/${file}`, { recursive: true }, (err) => {
             if (err) {
                 console.error(err);
                 exit(1);
             }
         });
-    });
+    }
 }
 
 // TODO: create a panic function

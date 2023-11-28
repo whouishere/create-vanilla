@@ -51,15 +51,15 @@ const getDevDependencies = (responses) => {
 
     switch (responses.linter) {
         case 'eslint': 
-            dev['eslint'] = dependencies.eslint;
+            dev.eslint = dependencies.eslint;
             
             if (responses.prettier) {
-                dev['prettier'] = dependencies.prettier;
+                dev.prettier = dependencies.prettier;
             }
             break;
         
         case 'biome':
-            dev['biome'] = dependencies.biome;
+            dev.biome = dependencies.biome;
             break;
         
         default:
