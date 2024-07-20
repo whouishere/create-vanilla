@@ -1,14 +1,14 @@
-import fs from 'fs';
-import { exit } from 'process';
+import fs from 'node:fs';
+import { exit } from 'node:process';
 import dependencies from './dependencies.js';
 import * as util from './util.js';
 
 const eslintrc = {
     env: {
-        browser: true, 
+        browser: true,
         es2021: true
-    }, 
-    extends: 'eslint:recommended', 
+    },
+    extends: 'eslint:recommended',
     parserOptions: {
         ecmaVersion: 'latest'
     }
@@ -16,7 +16,7 @@ const eslintrc = {
 
 const biomerc = {
     linter: {
-        enabled: true, 
+        enabled: true,
         rules: {
             recommended: true
         }
@@ -40,7 +40,7 @@ pnpm-lock.yaml
 `;
 
 /**
- * @param {{ project: string, linter: string, prettier: boolean }} responses 
+ * @param {{ project: string, linter: string, prettier: boolean }} responses
  * @returns {{}}
  */
 const getDevDependencies = (responses) => {
@@ -50,18 +50,18 @@ const getDevDependencies = (responses) => {
     };
 
     switch (responses.linter) {
-        case 'eslint': 
+        case 'eslint':
             dev.eslint = dependencies.eslint;
-            
+
             if (responses.prettier) {
                 dev.prettier = dependencies.prettier;
             }
             break;
-        
+
         case 'biome':
             dev.biome = dependencies.biome;
             break;
-        
+
         default:
             break;
     }
@@ -71,7 +71,7 @@ const getDevDependencies = (responses) => {
 
 /**
  * Creates the project folder and configuration files, based on prompt responses
- * @param {{ project: string, linter: string, prettier: boolean }} responses 
+ * @param {{ project: string, linter: string, prettier: boolean }} responses
  */
 function create(responses) {
     if (fs.existsSync(`${responses.project}/package.json`)) {
@@ -88,11 +88,11 @@ function create(responses) {
     });
 
     const packageJson = {
-        name: responses.project, 
-        version: '0.0.0', 
+        name: responses.project,
+        version: '0.0.0',
         scripts: {
             dev: 'live-server'
-        }, 
+        },
         devDependencies: getDevDependencies(responses)
     };
     util.writeToJson(packageJson, `${responses.project}/package.json`);
@@ -103,15 +103,21 @@ function create(responses) {
             util.writeToJson(eslintrc, `${responses.project}/.eslintrc.json`);
 
             if (responses.prettier) {
-                util.writeToJson(prettierrc, `${responses.project}/.prettierrc`);
-                util.writeToFile(prettierignore, `${responses.project}/.prettierignore`);
+                util.writeToJson(
+                    prettierrc,
+                    `${responses.project}/.prettierrc`
+                );
+                util.writeToFile(
+                    prettierignore,
+                    `${responses.project}/.prettierignore`
+                );
             }
             break;
-        
+
         case 'biome':
             util.writeToJson(biomerc, `${responses.project}/biome.json`);
             break;
-    
+
         default:
             break;
     }
@@ -119,7 +125,5 @@ function create(responses) {
     // copy the template to the project
     util.cpRecursive(`${util.getRootPath()}/template`, responses.project);
 }
-            
-export default {
-    create
-};
+
+export default { create };
